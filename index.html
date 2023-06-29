@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Your Timer / Stopwatch</title>
+</head>
+<body>
+
+    <main class="main">
+        <h1>Your Timer/Stopwatch
+            <span class="tip">
+                <!-- ℹ︎ -->
+                <div class="tip__icon">i</div>
+                <div class="tip__text"><b>hotkeys:</b><br>
+                T - tab switch<br>
+                S - start/resume<br>
+                P - pause<br>
+                R - stop<br>
+                + - increase (T)<br>
+                - - decrease (T)
+            </div>
+            </span>
+        </h1>
+        
+        <section class="app">
+            <div class="container">
+                   <div class="app__wrapper">
+                    
+                    <div class="app__controls">
+                        <button class="app__control active app__control--timer" id="timer_tab_btn">Timer</button>
+                        <button class="app__control app__control--stopwatch" id="stopwatch_tab_btn">Stopwatch</button>
+                    </div>
+
+                    <form action="#" class="app__form">
+                        <div class="app__form-row">
+                            <label class="app__input-box app__input-box--hours">
+                                <span>Hours</span>
+                                <input tabindex="1" min="0" required value="00" type="number" class="app__input app__input--hours">
+                                <div class="app__input-controls">
+                                    <button data-btn="minus" class="app__input-control app__input-control--minus"></button>
+                                    <button data-btn="plus" class="app__input-control app__input-control--plus"></button>
+                                </div>
+                            </label>
+                            <label class="app__input-box app__input-box--minutes">
+                                <span>Minutes</span>
+                                <input tabindex="2" min="0" required value="00" type="number" class="app__input app__input-minutes">
+                                <div class="app__input-controls">
+                                    <button data-btn="minus" class="app__input-control app__input-control--minus"></button>
+                                    <button data-btn="plus" class="app__input-control app__input-control--plus"></button>
+                                </div>
+                            </label>
+                            <label class="app__input-box app__input-box--seconds">
+                                <span>Seconds</span>
+                                <input tabindex="3" min="0" required value="00" type="number" class="app__input app__input-seconds">
+                                <div class="app__input-controls">
+                                    <button data-btn="minus" class="app__input-control app__input-control--minus"></button>
+                                    <button data-btn="plus" class="app__input-control app__input-control--plus"></button>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="app__form-controls">
+                            <button class="app__form-control app__form-control--reset">Stop</button>
+                            <button class="app__form-control app__form-control--start">Start</button>
+                        </div>
+                        <div class="app__popular-options">
+                            <div class="app__popular-options-title">Options:</div>
+                            <button data-time="0,15,0" class="app__popular-option">15m</button>
+                            <button data-time="0,30,0" class="app__popular-option">30m</button>
+                            <button data-time="0,45,0" class="app__popular-option">45m</button>
+                            <button data-time="1,0,0" class="app__popular-option">1h</button>
+                            <button data-time="2,0,0" class="app__popular-option">2h</button>
+                            <button data-time="3,0,0" class="app__popular-option">3h</button>
+                        </div>
+                    </form>
+
+                    <form action="#" class="stopwatch__form hidden">
+                        <div class="app__form-row">
+                            <div class="app__input-box app__input-box--hours">
+                                <span>Hours</span>
+                                <input min="0" required value="00" type="number" class="app__input app__input--hours">
+                            </div>
+                            <div class="app__input-box app__input-box--minutes">
+                                <span>Minutes</span>
+                                <input min="0" required value="00" type="number" class="app__input app__input-minutes">
+                            </div>
+                            <div class="app__input-box app__input-box--seconds">
+                                <span>Seconds</span>
+                                <input min="0" required value="00" type="number" class="app__input app__input-seconds">
+                            </div>
+                        </div>
+                        <div class="app__form-controls">
+                            <button class="app__form-control app__form-control--reset">Stop</button>
+                            <button tabindex="4" class="app__form-control app__form-control--start">Start</button>
+                        </div>
+                    </form>
+
+                   </div> 
+            </div>
+        </section>
+        <div class="change-colors">
+            <button class="change-colors__btn">Change colors</button>
+            <ul class="change-colors__list">
+                <li class="change-colors__list-option" data-theme="matrix"><span></span>Matrix</li>
+                <li class="change-colors__list-option" data-theme="deadspace"><span></span>Dead Space</li>
+                <li class="change-colors__list-option" data-theme="blackandwhite"><span></span>Pure White</li>
+                <li class="change-colors__list-option" data-theme="bloody"><span></span>Bloody</li>
+            </ul>
+        </div>
+    </main>
+    
+    <script src="model.js"></script>
+    <script src="view.js"></script>
+    <script src="controller.js"></script>
+</body>
+</html>
